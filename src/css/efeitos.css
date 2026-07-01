@@ -1,0 +1,30 @@
+}
+.personagem.fx-active::after{
+  content:"";
+  position:absolute;
+  inset:-4px;
+  border-radius:6px;
+  border:2px solid var(--fx-color, #7fd8ff);
+  box-shadow:0 0 10px 2px var(--fx-color, #7fd8ff), 0 0 22px 4px var(--fx-color, #7fd8ff);
+  animation:fx-card-pulse .6s ease-out;
+  pointer-events:none;
+}
+@keyframes fx-card-pulse{
+  0%{opacity:0; transform:scale(.9);}
+  30%{opacity:1;}
+  100%{opacity:0; transform:scale(1.06);}
+}
+
+/* Aura contínua e sutil ao redor da imagem grande do personagem selecionado */
+.personagem-grande{
+  position:relative;
+  transition:filter .2s ease;
+}
+.personagem-selecionado.fx-glow{
+  animation:fx-frame-glow 1.4s ease-in-out infinite alternate;
+  border-radius:8px;
+}
+@keyframes fx-frame-glow{
+  0%{box-shadow:0 0 0px 0px var(--fx-color, #7fd8ff);}
+  100%{box-shadow:0 0 24px 6px var(--fx-color, #7fd8ff);}
+}
